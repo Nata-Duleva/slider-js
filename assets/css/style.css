@@ -1,0 +1,170 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: Arial sans-serif;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  margin: auto;
+  background-color: black;
+}
+
+.carousel {
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.slides {
+  position: relative;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 40px;
+  padding: 40px;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  z-index: -999;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  background-position: 50% 50%;
+  background-size: cover;
+  text-align: center;
+}
+
+.slide:hover {
+  color: deepskyblue;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.control {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  bottom: 0;
+  padding: 2px;
+  cursor: pointer;
+  font-size: 60px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.control-next {
+  right: 0;
+  width: 10%;
+}
+
+.control-next:hover {
+  color: deepskyblue;
+  text-shadow: 0 0 20px deepskyblue;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+  background: -o-linear-gradient(right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+}
+
+.control-prev {
+  left: 0;
+  width: 10%;
+}
+
+.control-prev:hover {
+  color: deepskyblue;
+  text-shadow: 0 0 20px deepskyblue;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+}
+
+.control-pause {
+  padding: 0;
+  top: calc(50% - 10vh);
+  left: calc(50% - 10vh);
+  height: 20vh;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  font-size: 150px;
+}
+
+.control-pause:hover, .control-pause:focus {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+  text-shadow: 0 0 20px rgba(0, 183, 245, 0.8);
+}
+
+.indicators {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  padding: 0;
+  margin: 0 0 40px 0;
+  bottom: 0;
+  list-style: none;
+  z-index: 3;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.indicator {
+  height: 15px;
+  width: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 10px rgba(0, 183, 245, 0.5);
+          box-shadow: 0 0 10px rgba(0, 183, 245, 0.5);
+  margin: 10px 10px 0 0;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
+
+.indicator.active {
+  border-color: deepskyblue;
+  color: white;
+}

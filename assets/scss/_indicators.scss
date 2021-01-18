@@ -1,0 +1,27 @@
+.indicators {
+  display: flex;
+  position: absolute;
+  padding: 0;
+  margin: 0 0 40px 0;
+  bottom: 0;
+  list-style: none;
+  z-index: 3;
+  justify-content: center;
+  width: 100%;
+}
+
+.indicator {
+  height: 15px;
+  width: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 183, 245, 0.5);
+  margin: 10px 10px 0 0;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+
+  &.active {
+    border-color: deepskyblue;
+    color: white;
+  }
+}
